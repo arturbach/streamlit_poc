@@ -50,5 +50,5 @@ if ingredients_list :
       st.success('Your Smoothie is ordered!', icon="✅")   
    
 import requests
-fruityvice_responce = request.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_responce = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_responce)
