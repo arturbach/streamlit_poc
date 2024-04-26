@@ -37,23 +37,18 @@ if ingredients_list :
   ## st.text(ingredients_list)
 
    ingredients_string =''   
-  
     
    for fruit_chosen in ingredients_list:
        ingredients_string += fruit_chosen + ' '
-
-
    st.write('You selected:',ingredients_string  )
    my_insert_stmt = """ insert into smoothies.public.orders(ingredients , name_on_order)
             values ('""" + ingredients_string + """' , '""" + name_on_order + """')"""
-
-     
   
-
-
-    
    ###st.write(my_insert_stmt)
    if st.button('Submit Order'):
       session.sql(my_insert_stmt).collect()
       st.success('Your Smoothie is ordered!', icon="✅")   
    
+import requests
+fruityvice_responce = request.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_responce)
