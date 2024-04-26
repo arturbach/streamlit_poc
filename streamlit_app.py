@@ -51,4 +51,4 @@ if ingredients_list :
    
 import requests
 fruityvice_responce = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_responce)
+st.text(fruityvice_responce.json())
