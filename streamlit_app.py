@@ -20,11 +20,12 @@ from snowflake.snowpark.functions import col
 cnx=st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME') ,col('search_on'))
+st.stop()
+
 name_on_order = st.text_input(
            "Please Enter Name of Smothie","Default name is... "
           
         )
-   
 st.write("You entered: ", name_on_order) 
 
 ingredients_list  = st.multiselect(
